@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj, edited by Dragun Konstantin
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[pdftex]{hyperref}
+\usepackage{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{hyperref}% http://ctan.org/pkg/hyperref
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  linkbordercolor=red,
+  urlcolor=blue!70!black
+}
+
+\RequirePackage{tikz}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeProject}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \technologies{#3}
+    \end{tabular*}\vspace{3pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\colorlet{shadecolor}{gray!40}
+
+% Create a tag
+% Usage: \cvtag{<tag label>}
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=shadecolor!70,rounded corners=0.9ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.4ex,text depth=.25ex]{#1};
+  \vspace{-1pt}
+}
+ 
+% Render a technology list
+\newcommand\technologies[1]{
+    \small{\foreach \n in {#1}{\cvtag{\n}}} 	\\
+}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Dragun Konstantin} \\ \vspace{1pt}
+    \small +7-918-678-76-77 $|$ \href{mailto:dragun.kiu@phystech.edu}{dragun.kiu@phystech.edu} $|$ 
+    \href{https://www.linkedin.com/in/konstantin-dragun-a08132213/}{linkedin.com/in/konstantin-dragun} $|$
+    \href{https://github.com/kostya2709}{github.com/kostya2709}
+\end{center}
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Moscow Institute of Physics and Technology}{Moscow, Russia}
+      {Bachelor of Applied Mathematics and Computer Science;  8.49/10}{Sep. 2019 -- Aug. 2023}
+    \resumeSubheading
+      {The Advanced Educational Scientific Center (AESC MSU)}{Moscow, Russia}
+      {Graduated from one of the finest high shool in Russia with a gold medal}{Sep. 2017 -- Aug. 2019}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Huawei, Moscow Compiler Laboratory}{Moscow, Russia}
+      {Junior Engineer}{Jul 2021 - Present}
+      \technologies{C, C++, Assembly, x86-64, ARMv8, RiscV}
+      
+      \resumeItemListStart
+        \resumeItem{RiscV backend}
+          {Implemented a RiscV backend of the binary translator.}
+        \resumeItem{Testing implementation}
+          {Made support of the existing tests of signal handling to the implemented RiscV backend.}
+        \resumeItem{Frontend Improvement}
+          {Improved the existing way of generation IR instructions of floating point instructions.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+      \resumeProject{\href{https://github.com/kostya2709/MIPT_Sem_3}{Graphic editor}}
+        {Sep. 2020 -- Dec. 2020}{C++, SFML, OpenGL}\
+      Implemented a high-level graphic library, which can use any graphic library inside (now it supports OpenGL and SFML). Developed a graphic editor using my library.
+  
+    \resumeProject{\href{https://github.com/kostya2709/New_Roman}{Programming Language}}
+        {Feb. 2020 -- Jun. 2020}{C, C++, Assembly, Graphviz}\
+      Developed a Turing complete programming language -- New Roman Language with translation to x86 Assembly. 
+      
+    \resumeProject{\href{https://github.com/kostya2709/Alpha_Blending}{Alpha-Blending}}
+        {Mar. 2020 -- Apr. 2020}{C, C++, Assembly, x86-64, SIMD}\
+      Alpha-Blending program overlaying pictures, managing alpha channel. The program is optimized with SSE instructions.
+      
+    \resumeProject{\href{https://github.com/kostya2709/Differentiator}{Differentiator}}
+        {Oct. 2019 -- Nov. 2019}{C, C++, LaTex}\
+      Implemented a differentiator program, which allows to calculate derivatives, simplificate expressions, and write down the results with intermediate steps in LaTex format.
+
+\resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Languages}{: C/C++, x86-64/ARM Assembly, Python.}
+     }\vspace{-7pt}
+     \item{
+     \textbf{Technologies}{: SQL, Git, \LaTeX.}
+     }\vspace{-7pt}
+     \item{
+     \textbf{Knowledge}{: Algorithms, Data Structures, Concurrent Computing, Distributed Systems, Computer Networks, Machine Learning, Deep Learning.}
+   }\vspace{-7pt}
+ \resumeSubHeadingListEnd
+ 
+ %
+%--------Volunteer Experience------------
+\section{Volunteer Experience}
+ \resumeSubHeadingListStart
+    \resumeSubheading
+      {ICPC World Finals}{Moscow, Russia}
+      {Chief volunteer}{Sep. 2021 -- Oct. 2021}
+      Participated in the ICPC World Finals as the head of MIPT volunteers.
+      
+    \resumeSubheading
+      {AIESEC}{Moscow, Russia}
+      {Manager}{Sep. 2021 -- Dec. 2021}
+      Helped people to find international internships.
+ \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
